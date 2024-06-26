@@ -25,7 +25,9 @@ mr, urc = rc.tabs(["Manual Run",  "Upload and Run Checks"])
 
 with cd:
     with st.expander(":alarm_clock: Scheduler Updates", expanded=True):
-        st.write("Schduler updates")
+        st.success("Last check ( at 10.30pm) today was manul run: success")
+        st.info("Last check (10.30pm) today was successful")
+        st.warning("Last check was unsuccessful! therefore waiting for the retries")
     with st.expander(":memo: Logs", expanded=True):
         logs = pd.DataFrame(map(lambda x: x.__dict__, get_recent_logs()))
         selected_cols = filter(lambda x: not x.startswith("_"), logs.columns)
