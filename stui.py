@@ -25,9 +25,9 @@ mr, urc = rc.tabs(["Manual Run",  "Upload and Run Checks"])
 
 with cd:
     with st.expander(":alarm_clock: Scheduler Updates", expanded=True):
-        st.success("Last check ( at 10.30pm) today was manul run: success")
-        st.info("Last check (10.30pm) today was successful")
-        st.warning("Last check was unsuccessful! therefore waiting for the retries")
+        st.success(":white_check_mark: Last check ( at 10.30pm) today was manul run: success")
+        st.info(":bell: Last check (10.30pm) today was successful")
+        st.warning(":warning: Last check was unsuccessful! therefore waiting for the retries") 
     with st.expander(":memo: Logs", expanded=True):
         logs = pd.DataFrame(map(lambda x: x.__dict__, get_recent_logs()))
         selected_cols = filter(lambda x: not x.startswith("_"), logs.columns)
@@ -55,5 +55,5 @@ with urc:
     st.write(st.session_state)
     
 rc_btn, mail_btn = rc.columns(2)
-rc_btn.button("Run Checks", use_container_width=True)
-mail_btn.button("Send Results", use_container_width=True)
+rc_btn.button("🔍 Run Checks", use_container_width=True)
+mail_btn.button("➡️ Send Results", use_container_width=True)
